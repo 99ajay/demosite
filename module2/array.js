@@ -24,3 +24,31 @@ console.log("array after push :" +elearr);
 //push->add item at last in the array 
 console.log("################################################################################");
 
+//2.pop
+
+console.log("array before pop : ",elearr);
+elearr.pop();
+console.log("array after pop: ",elearr);
+//pop->remove element from the last
+console.log("###############################################################################")
+
+
+//3.SHIFT
+console.log("array before shift: ",elearr);
+elearr.shift();
+console.log("array after shift: ",elearr);
+// shift->remove element from the start
+console.log("#############################################################################");
+
+//4.unshift
+console.log("array after unshift",elearr);
+elearr.unshift("newly added item");
+console.log("array after the unshift: ",elearr);
+// unshift->add item from start
+console.log("####################################################################################");
+
+
+//length
+
+let len=elearr.length;
+console.log(len);
