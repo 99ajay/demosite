@@ -25,8 +25,37 @@ console.log(ans);
 
 
 //storing a function in javascript 
-let a=function sub(num1,num2)
+//
+let a=function sub(num1,num2)//that is why it is called because it can store in the variable//
 {
     return num1-num2;
 }
 console.log(a(64838,7584));
+//area of the circle 
+ let f=function area_of_circle(radius)
+{
+    return 3.14*radius*radius;
+}
+console.log(f(5.98));
+
+
+
+//area of the rectangle 
+let rectangle=function area_of_rectangle(length,breath)
+{
+    return length*breath;
+}
+console.log(rectangle(67,86));
+
+
+//IIFE->Immediately invoked function expression
+(function()
+{
+    console.log("hello from IIFE");
+})();
+
+//IIFE with parameter
+    (function(num1,num2)
+    {
+        console.log(num1/num2);
+    })(10,6);
