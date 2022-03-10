@@ -10,7 +10,7 @@ let objajay={
 };
 console.log(objajay);
 let forest={
-    forest_name:chehat_gadh,
+    forest_name:'jdh',
     mo_nu:8577871550,
     age_of_forest:897,
     jasprit:'heny_peny'
@@ -30,7 +30,8 @@ let captionamerica={
     //key: function
     sayhii:function()
     {
-        console.log('caption america says hii to me sir');
+        console.log('caption america says hii to me sir')
     }
 }
+console.log(captionamerica);
 
