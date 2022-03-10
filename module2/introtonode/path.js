@@ -14,3 +14,8 @@ console.log(__filename);//return path with file name
 
 let baseName=path.basename(__filename);
 console.log(baseName);
+
+let dirPath=__dirname;
+console.log(dirPath);
+let newFilePath=path.join(dirPath,"test.js");
+console.log(newFilePath);
