@@ -1,31 +1,48 @@
-//CRUD OPERATION 
+let fs = require("fs");
+// console.log(fs);
+let path = require("path");
 
+let filePath = path.join(__dirname,"file.txt");
+ console.log(filePath);
 
+//C-create
+//it creates file if it does not exists else it override
+fs.writeFileSync(filePath,"Hello I am a text file ");
 
-
-let fs=require("fs");
-//console.log(fs);
-
-
-let path=require("path");
-let filePath=path.join(__dirname,"file.txt");
-//console.log(filePath);
-
-//c create
-fs.writeFileSync(filePath,"hello i am a ajay verma");//create file if file does not exit inn the folder and override if it is already present in the folder 
-
-//r read
-console.log("before update : ");
-let content=fs.readFileSync(filePath,'utf-8');
+// //R-read
+console.log("Before update : ");
+let content = fs.readFileSync(filePath,'utf-8');
 console.log(content);
 
-//try to write after the file not replace the file 
+// //U-update
+// fs.appendFileSync(filePath,"\nNewly added content");
+// console.log("After update : ")
+// console.log(fs.readFileSync(filePath,'utf-8'));
 
-//u update
-fs.appendFileSync(filePath," newly added content");
-console.log("after update : ");
-console.log(fs.readFileSync(filePath,'utf-8'));
+// //D-delete
+// fs.unlinkSync(filePath);
 
+//Create a directory
 
-//D delete
-//fs.unlinkSync(filePath);
+// if(!fs.existsSync("hamariDirectory"))
+//     fs.mkdirSync("hamariDirectory");
+
+// //Read a directory
+
+// let folderPath = __dirname;
+
+// let contentOfFolder = fs.readdirSync(folderPath);
+// console.log(contentOfFolder);
+
+//Delete a directory
+
+// fs.rmdirSync("hamariDirecotry")
+
+//copy a file 
+
+let sourcePath = path.join(__dirname,"file.txt")
+let destinationPath = path.join(__dirname,"module","file.txt")
+console.log(sourcePath);
+console.log(destinationPath);
+
+fs.copyFileSync(sourcePath,destinationPath);
