@@ -14,10 +14,10 @@ console.log("Before update : ");
 let content = fs.readFileSync(filePath,'utf-8');
 console.log(content);
 
-// //U-update
-// fs.appendFileSync(filePath,"\nNewly added content");
-// console.log("After update : ")
-// console.log(fs.readFileSync(filePath,'utf-8'));
+//U-update
+fs.appendFileSync(filePath,"\nNewly added content");
+console.log("After update : ")
+console.log(fs.readFileSync(filePath,'utf-8'));
 
 // //D-delete
 // fs.unlinkSync(filePath);
@@ -41,7 +41,7 @@ console.log(content);
 //copy a file 
 
 let sourcePath = path.join(__dirname,"file.txt")
-let destinationPath = path.join(__dirname,"module","file.txt")
+let destinationPath = path.join(__dirname,"../introtonode","file.txt")
 console.log(sourcePath);
 console.log(destinationPath);
 
