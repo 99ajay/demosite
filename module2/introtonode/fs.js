@@ -7,16 +7,16 @@ let filePath = path.join(__dirname,"file.txt");
 
 //C-create
 //it creates file if it does not exists else it override
-fs.writeFileSync(filePath,"Hello I am a text file ");
+ fs.writeFileSync(filePath,"Hello I am a text file ");
 
-// //R-read
-console.log("Before update : ");
-let content = fs.readFileSync(filePath,'utf-8');
-console.log(content);
+// // //R-read
+ console.log("Before update : ");
+ let content = fs.readFileSync(filePath,'utf-8');
+ console.log(content);
 
-//U-update
+// //U-update
 fs.appendFileSync(filePath,"\nNewly added content");
-console.log("After update : ")
+ console.log("After update : ")
 console.log(fs.readFileSync(filePath,'utf-8'));
 
 // //D-delete
@@ -24,24 +24,24 @@ console.log(fs.readFileSync(filePath,'utf-8'));
 
 //Create a directory
 
-// if(!fs.existsSync("hamariDirectory"))
-//     fs.mkdirSync("hamariDirectory");
+if(!fs.existsSync("hamariDirectory"))
+    fs.mkdirSync("hamariDirectory");
 
 // //Read a directory
 
-// let folderPath = __dirname;
+let folderPath = __dirname;
 
-// let contentOfFolder = fs.readdirSync(folderPath);
-// console.log(contentOfFolder);
+let contentOfFolder = fs.readdirSync(folderPath);
+console.log(contentOfFolder);
 
 //Delete a directory
 
-// fs.rmdirSync("hamariDirecotry")
+//fs.rmdirSync("hamariDirectory")
 
 //copy a file 
 
 let sourcePath = path.join(__dirname,"file.txt")
-let destinationPath = path.join(__dirname,"../introtonode","file.txt")
+let destinationPath = path.join(__dirname,"module","file.txt")
 console.log(sourcePath);
 console.log(destinationPath);
 
