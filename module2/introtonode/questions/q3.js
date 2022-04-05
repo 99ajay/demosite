@@ -7,5 +7,6 @@ let srcPath = path.join(__dirname,"..","..","..","module1","index.html");
 console.log("source path --> ",srcPath);
 let destPath = path.join(__dirname,"..","..","index.html");
 console.log("destination --> ",destPath);
+console.log(__dirname);
 
 fs.copyFileSync(srcPath,destPath);
