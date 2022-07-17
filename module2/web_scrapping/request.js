@@ -16,9 +16,10 @@ request(link,cb);
        //  const document=dom.window.document.querySelector("p").textContent;
         // console.log('body:', body); // Print the HTML for the Google homepage.
        // console.log(document);
-       const document=dom.window.document;
-       let teamsName=document.querySelectorAll(".ci-team-score.ds-flex.ds-justify-between.ds-items-center.ds-text-typo-title.ds-mb-2 .ds-text-tight-l.ds-font-bold");
-       console.log(teamsName[0].textContent);
+       const document=dom.window.document; //parse kar leta hai apne hisab se document me jaise dom browser kar leta hai ham tool ke madhyam se parse kar lete hai 
+       let teamsName=document.querySelectorAll(".ci-team-score.ds-flex.ds-justify-between.ds-items-center.ds-text-typo-title.ds-mb-2 .ds-text-tight-l.ds-font-bold");//ye ek command hota hai
+       //jo selectior pass krne par document me se sbko lakar ek array me store kar deta hai
+       console.log(teamsName[0].textContent); //ab hame keval text chahiye to aise print kar lete hai 
        console.log(teamsName[1].textContent);
      }
 };
