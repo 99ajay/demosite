@@ -1,9 +1,11 @@
 //const require=require("request");
 const jsdom =require("jsdom");
 const request = require("request");
+let fs=require("fs");
 const{JSDOM} =jsdom;
 const link="https://www.espncricinfo.com/series/ipl-2021-1249214/match-results";
 let leaderboard=[];
+let counter=0;
 request(link,cb);
 function cb(error,response,html)
 {
@@ -24,7 +26,7 @@ function cb(error,response,html)
           let completescorecardlink="https://www.espncricinfo.com"+y;
           //console.log(completescorecardlink);
           request(completescorecardlink,cb2);
-        //   count++;
+           counter++;
         }
         // console.log(count);
     }
@@ -52,10 +54,17 @@ function cb2(error,response,html){
                     let balls=tds[3].textContent;
                     let four=tds[5].textContent;
                     let six=tds[6].textContent;
-                    console.log("Name : ",nameoo,"           Runs : ",run,"        balls : ",balls,"    four : ",four,"     Six : ",six);
-                    
+                   // console.log("Name : ",nameoo,"           Runs : ",run,"        balls : ",balls,"    four : ",four,"     Six : ",six);
+                    processPlayer(nameoo,run,balls,four,six);
 
                 }
+            }
+            counter--;
+            if(counter==0)
+            {
+                //console.log(leaderboard);
+                let data = JSON.stringify(leaderboard);
+                fs.writeFileSync('BatsmenStats.json',data);
             }
         }
       
@@ -63,10 +72,10 @@ function cb2(error,response,html){
     }
 }
 
-processPlayer('Rohit','15','4','2','4');
-processPlayer('Virat','50','20','4','3')
-processPlayer('Rohit','40','20','1','2');
-console.log(leaderboard);
+// processPlayer('Rohit','15','4','2','4');
+// processPlayer('Virat','50','20','4','3')
+// processPlayer('Rohit','40','20','1','2');
+//console.log(leaderboard);
 
 function processPlayer(name,runs,balls,fours,sixes){
     runs = Number(runs);
