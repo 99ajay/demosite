@@ -10,15 +10,15 @@ let browserPromise = puppeteer.launch({ headless: false });  //it is doing promi
 //     console.log("page is opened");
 //     let urlPromise = page.goto('https://www.google.com/');
 //     return urlPromise
-// }).then(function(){
+// }).then(function(){2
 //     console.log("google is opened");
 
 // })
 
-let browserPromise=puppeteer.launch({headless : false});
-browserPromise.then(function(browserInstance) //if promise is complete then pass browser instance 
-{
-    console.log("Browser is opened");
-    let pagePromise=browserInstance.newPage(); //to open for the new page in the browser 
-})
+//let browserPromise=puppeteer.launch({headless : false});
+// browserPromise.then(function(browserInstance) //if promise is complete then pass browser instance 
+// {
+//     console.log("Browser is opened");
+//     let pagePromise=browserInstance.newPage(); //to open for the new page in the browser 
+// })
  
