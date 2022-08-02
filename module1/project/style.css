@@ -1,0 +1,35 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+}
+
+ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type:none;
+    font-size:x-large;
+}
+nav{
+    width: 60vw;
+    margin-top: 10px;
+}
+.bigimage{
+     width: 95vw;
+     margin: 1rem;
+     
+}
+.containeer
+{
+    display: flex;
+}
+.bigimage
+{
+    width: 95vw;
+    margin :1rem;
+}
+.containeer>div
+{
+    /* border: 5px solid #FFFF00; */
+text-align: center;
+}

@@ -24,23 +24,35 @@
 //     count--;
 // }
 //program to check is prime;
-let n=13;
-let flag=true;
-if(n<=1)
-{
-    flag=false;
-}
-for(let i=2;i*i<=n;i++)
-{
-    if(n%i==0)
-    {
-        flag=false;
-    }
-}
-if(flag)
-{
-    console.log("number is prime number")
-}
-else{
-    console.log("number is not prime number ");
-}
+// let n=13;
+// let flag=true;
+// if(n<=1)
+// {
+//     flag=false;
+// }
+// for(let i=2;i*i<=n;i++)
+// {
+//     if(n%i==0)
+//     {
+//         flag=false;
+//     }
+// }
+// if(flag)
+// {
+//     console.log("number is prime number")
+// }
+// else{
+//     console.log("number is not prime number ");
+// }
+
+console.log("i am ajay verma");
+console.log("have a addict");
+
+let a=10;
+console.log(a);
+
+let char='a';
+console.log(char);
+
+let str="my name is ajay verma ";
+console.log(str);

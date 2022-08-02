@@ -35,5 +35,6 @@ let captionamerica={
 }
 let x=90;
 captionamerica.caty=x;
+captionamerica.spider="peter parker";
 console.log(captionamerica);
 

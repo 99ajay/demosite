@@ -1,11 +1,14 @@
-const person = {
-    fname:"John",
-    lname:"Doe",
-    age:25
-  }; 
-  
-  let txt = "";
-  for (let x in person) {
-    txt += person[x] + " ";
+const myVehicle = {
+    brand: 'Ford',
+    model: 'Mustang',
+    color: 'red'
   }
-console.log(txt);  
+  
+  const updateMyVehicle = {
+    type: 'car',
+    year: 2021, 
+    color: 'yellow'
+  }
+  
+  const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
+  console.log(myUpdatedVehicle);
