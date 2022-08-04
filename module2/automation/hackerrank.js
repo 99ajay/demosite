@@ -1,4 +1,6 @@
 const puppeteer=require("puppeteer");
+const mail="hitani4016@chimpad.com";
+const pass="12345qwert";
 
 let browserPromise=puppeteer.launch({headless:false});
 
@@ -21,5 +23,39 @@ browserPromise.then(function(browser){
 
 }).then(function(){
     let clickPromise=page.click(".menu-item-2887 a");
-    return ;
+    return clickPromise;
+}).then(function()
+{
+    let waitPromise=page.waitForSelector("a .fl-button-text");
+    return waitPromise;
+}).then(function()
+{
+    let domclickPromise=page.evaluate(function()
+    {
+        let btns=document.querySelectorAll("a .fl-button-text");
+        btns[1].click();
+        return;
+    })
+    return domclickPromise;
+}).then(function()
+{
+    let waitPromise=page.waitForSelector("#input-1");
+    return waitPromise;
+}).then(function()
+{
+    let mailrypedpromise=page.type('#input-1',mail,{delay: 1000});
+    return mailrypedpromise;
+    
+   
+}).then(function()
+{
+    let passtypepromise=page.type("#input-2",pass,{delay: 100});
+    return passtypepromise;
+}).then(function()
+{
+    let clickfinal=page.click(".ui-btn.ui-btn-large.ui-btn-primary.auth-button.ui-btn-styled");
+    return clickfinal;
+}).then(function()
+{
+    console.log("login successful");
 })
