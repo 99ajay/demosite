@@ -58,4 +58,30 @@ browserPromise.then(function(browser){
 }).then(function()
 {
     console.log("login successful");
+    return page.waitForSelector('[data-automation="algorithms"]');
+}).then(function()
+{
+    
+    return page.click('[data-automation="algorithms"]');
+}).then(function()
+{
+    return page.waitForSelector(".filter-group");
+}).then(function()
+{
+    let domselectpromise=page.evaluate(function()
+    {
+        let alldivs=document.querySelectorAll(".filter-group");
+        let div=alldivs[3];
+        let clickselector=div.querySelector(".ui-checklist-list-item input");
+        clickselector.click();
+        return;
+    })
+    return domselectpromise;
+}).then(function()
+{
+    console.log("warm up selected");
+    return page.waitForSelector(".challenges-list .js-track-click.challenge-list-item");
+}).then(function()
+{
+    
 })
