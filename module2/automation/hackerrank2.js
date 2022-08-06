@@ -17,13 +17,7 @@ browserPromise.then(function(browser){
     let urlPromise=page.goto(" https://www.hackerrank.com/");
     return urlPromise;
 }).then(function(){
-    console.log("hackerrank page is opened");
-    let waitPromise=page.waitForSelector(".menu-item-2887 a");
-    return waitPromise;
-
-}).then(function(){
-    let clickPromise=page.click(".menu-item-2887 a");
-    return clickPromise;
+    return waitAndClick(".menu-item-2887 a");
 }).then(function()
 {
     let waitPromise=page.waitForSelector("a .fl-button-text");
@@ -58,11 +52,7 @@ browserPromise.then(function(browser){
 }).then(function()
 {
     console.log("login successful");
-    return page.waitForSelector('[data-automation="algorithms"]');
-}).then(function()
-{
-    
-    return page.click('[data-automation="algorithms"]');
+    return waitAndClick('[data-automation="algorithms"]');
 }).then(function()
 {
     return page.waitForSelector(".filter-group");
@@ -72,9 +62,10 @@ browserPromise.then(function(browser){
     {
         let alldivs=document.querySelectorAll(".filter-group");
         let div=alldivs[3];
-        let clickselector=div.querySelectorAll(".ui-checklist-list-item input");
-        clickselector[0].click();
-        return;
+        let clickSelector=div.querySelector(".ui-checklist-list-item input");
+       clickSelector.click( {clickCount:2});
+       return ;
+        
     })
     return domselectpromise;
 }).then(function()
@@ -83,5 +74,33 @@ browserPromise.then(function(browser){
     return page.waitForSelector(".challenges-list .js-track-click.challenge-list-item");
 }).then(function()
 {
-
+   let arrpromise=page.evaluate(function()
+   {
+    let arr=[];
+    let alltags=document.querySelectorAll('.challenges-list .js-track-click.challenge-list-item');
+    for(let i=0;i<alltags.length;i++)
+    {
+        let link=alltags[i].href;
+        console.log(link);
+        arr.push(link);
+    }
+    return arr;
+   })
+   return arrpromise;
+}).then(function(questionarr)
+{
+    console.log(questionarr);
 })
+
+
+function waitAndClick(selector){
+    return new Promise(function(resolve,reject){
+        let waitPromise = page.waitForSelector(selector);
+        waitPromise.then(function(){
+            let clickPromise = page.click(selector);
+            return clickPromise;
+        }).then(function(){
+            resolve();
+        });
+    })
+}
