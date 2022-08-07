@@ -1,6 +1,7 @@
 const puppeteer=require("puppeteer");
 const mail="hitani4016@chimpad.com";
 const pass="12345qwert";
+const code =require('./code');
 
 let browserPromise=puppeteer.launch({ headless: false, defaultViewport: null, args: ['--start-maximized'] });
 
@@ -90,6 +91,8 @@ browserPromise.then(function(browser){
 }).then(function(questionarr)
 {
     console.log(questionarr);
+    let questionPromise=questionSolver(questionarr[0],code.answers[0]);
+    return questionPromise;
 })
 
 
@@ -102,5 +105,61 @@ function waitAndClick(selector){
         }).then(function(){
             resolve();
         });
+    })
+}
+
+
+
+
+function questionSolver(question,answer){
+    return new Promise(function(resolve,reject){
+        let linkPromise = page.goto(question);
+        linkPromise.then(function(){
+            return waitAndClick('.checkbox-wrap>input');
+        }).then(function()
+        {
+            return waitAndClick(".ui-tooltip-wrapper .input.text-area.custominput.auto-width");
+        }).then(function()
+        {
+            console.log("on the text page");
+            let typepromise=page.type('.ui-tooltip-wrapper .input.text-area.custominput.auto-width',answer);
+            return typepromise;
+        }).then(function()
+        {
+            let holdcontrol=page.keyboard.down('Control');
+            return holdcontrol;
+        }).then(function()
+        {
+             let pressA=page.keyboard.press('A');
+             return pressA;
+        }).then(function()
+        {
+            let pressX=page.keyboard.press('X');
+            return pressX;
+
+        }).then(function()
+        {
+            let upcontrol=page.keyboard.up('Control');
+            return upcontrol;
+        }).then(function()
+        {
+            return waitAndClick(".monaco-editor.no-user-select .vs");
+        }).then(function()
+        {
+            return page.keyboard.down('Control');
+        }).then(function()
+        {
+            return page.keyboard.press('A');
+        }).then(function()
+        {
+            return page.keyboard.press('V');
+        }).then(function()
+        {
+            return waitAndClick(".ui-btn.ui-btn-normal.ui-btn-primary.pull-right.hr-monaco-submit.ui-btn-styled");
+
+        }).then(function()
+        {
+            console.log("question one has been compeletely submitted");
+        })
     })
 }
