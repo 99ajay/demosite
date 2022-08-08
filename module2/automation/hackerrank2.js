@@ -92,7 +92,20 @@ browserPromise.then(function(browser){
 {
     console.log(questionarr);
     let questionPromise=questionSolver(questionarr[0],code.answers[0]);
+    //let questionPromise=questionSolver(questionarr[1],code.answers[1]);
+
+    for(let i=1;i<questionarr.length;i++)
+    {
+        questionPromise=questionPromise.then(function()
+        {
+            let nextquestionpromise=questionSolver(questionarr[i],code.answers[i]);
+            return nextquestionpromise;
+        })
+    }
     return questionPromise;
+}).then(function()
+{
+    console.log("all question has been submitted");
 })
 
 
@@ -100,7 +113,7 @@ function waitAndClick(selector){
     return new Promise(function(resolve,reject){
         let waitPromise = page.waitForSelector(selector);
         waitPromise.then(function(){
-            let clickPromise = page.click(selector);
+            let clickPromise = page.click(selector,{delay : 100});
             return clickPromise;
         }).then(function(){
             resolve();
@@ -122,7 +135,7 @@ function questionSolver(question,answer){
         }).then(function()
         {
             console.log("on the text page");
-            let typepromise=page.type('.ui-tooltip-wrapper .input.text-area.custominput.auto-width',answer);
+            let typepromise=page.type('.ui-tooltip-wrapper .input.text-area.custominput.auto-width',answer,{delay : 100});
             return typepromise;
         }).then(function()
         {
@@ -155,11 +168,15 @@ function questionSolver(question,answer){
             return page.keyboard.press('V');
         }).then(function()
         {
+            return page.keyboard.up('Control');
+        }).then(function()
+        {
             return waitAndClick(".ui-btn.ui-btn-normal.ui-btn-primary.pull-right.hr-monaco-submit.ui-btn-styled");
 
         }).then(function()
         {
             console.log("question one has been compeletely submitted");
+            resolve();
         })
     })
 }
