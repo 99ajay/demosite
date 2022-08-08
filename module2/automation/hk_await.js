@@ -42,6 +42,7 @@ const code =require('./code');
     for(let i=0;i<questionsArr.length;i++){
         await questionSolver(questionsArr[i],code.answers[i],page);
     }
+    await browser.close();
 })();
  
 
