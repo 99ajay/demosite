@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "A.C": "cpp"
+        "A.C": "cpp",
+        "vector": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "liveServer.settings.port": 5501
