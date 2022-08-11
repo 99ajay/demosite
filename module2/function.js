@@ -1,5 +1,5 @@
-// let sum=10+3;
-// let another_sum=23+8;
+let sum=10+3;
+let another_sum=23+8;
 function sayHello()//function name)of_the_function
 {
     //body of function
