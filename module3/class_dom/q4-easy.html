@@ -20,6 +20,15 @@
     </ul>
     <script>
       //insertBefore
+      // Rule..
+      // insertBefore(newNode, referenceNode);
+      // newNode::--
+      // The node to be inserted.
+
+// referenceNode::--
+//   The node before which newNode is inserted.
+//   If this is null, then newNode is inserted at the end of node's child nodes.
+
       let liTag = document.createElement("li");
       liTag.innerText = '7';
       let allLi = document.querySelectorAll("li");
