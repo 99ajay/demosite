@@ -3,7 +3,8 @@ let arr=[1,2,3];
 
 let arr2=[...arr]
 
-arr[2]=10;
+ //arr[2]=10;
+ arr2[2]=10;
 console.log(arr);
 console.log(arr2);
 
@@ -36,8 +37,12 @@ console.log(obj.address);
 console.log("##################");
 console.log(obj2.name);
 console.log(obj2.address);
-
-//deep copy
+console.log("deep copy................................????????????????????????????????????");
+// //deep copy
+// let obj4={...obj};
+// obj4.address.country="japan";
+// console.log(obj.address.country);
+// console.log(obj4.address.country);
 
 let obj3=JSON.parse(JSON.stringify(obj))
 

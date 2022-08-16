@@ -1,14 +1,14 @@
  //Array
-// let arr = [1,2,4];
-// // let a = arr[0];
-// // let b = arr[1];
-// // let c = arr[2];
-// let [a,b = 10,c,d = 0] = arr;
+let arr = [1,2,4];
+// let a = arr[0];
+// let b = arr[1];
+// let c = arr[2];
+let [a,b = 10,c,d = 0] = arr;
 
-// console.log(a);
-// console.log(b);
-// console.log(c);
-// console.log(d);
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
 
 
 //Object
@@ -19,8 +19,11 @@
 //     pincode:12345
 // }
 
-// // let {name,state} = obj
-// // let {state,name} = obj
+//let {name,state} = obj
+//console.log(name,state);
+//let {state,name} = obj
+//console.log(name,state);
+
 
 // let {state,name:firstName} = obj
 // console.log(firstName);
