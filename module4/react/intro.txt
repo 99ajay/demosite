@@ -1,0 +1,10 @@
+1.it is a library
+2.created by the facebook
+3.use to build ui/frontend;
+
+#######################
+why?
+1.very fast
+2.easy event handling
+3.small library easy
+4.manage ui using sheets
