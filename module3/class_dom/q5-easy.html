@@ -101,11 +101,13 @@
     <script>
       // Q Make the filter work
       let selectTag = document.querySelector("select");
+      //console.log(selectTag);
       selectTag.addEventListener("change",function(e){
-        // console.log(e.target.value);
-        let filter = e.target.value;
-        let allMovies = document.querySelectorAll(".movies");
-        for(let i=0;i<allMovies.length;i++){
+           console.log(e);
+           console.log(e.target.value);
+           let filter = e.target.value;
+           let allMovies = document.querySelectorAll(".movies");
+           for(let i=0;i<allMovies.length;i++){
           let pTagCurrent = allMovies[i].querySelector("p");
           let currentMovieFilter = pTagCurrent.getAttribute("data-category");
           if(filter == 'none' || filter == currentMovieFilter){

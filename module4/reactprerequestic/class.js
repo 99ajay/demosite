@@ -10,7 +10,7 @@ class Person{
 
 class Teacher extends Person{
     constructor(name,age,classStrength){
-        super(name,age);
+        super(name,age);  //we call constructor of teachers and set the value 
         this.classStrength = classStrength;
     }
 }
@@ -22,7 +22,7 @@ class Student extends Person{
     }
 }
 
-let person = new Person("Adam",25);
+let person = new Person("Adam",25);//creating class of object
 console.log(person);
 
 let teacher = new Teacher("Aman",23,58);

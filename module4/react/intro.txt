@@ -8,3 +8,12 @@ why?
 2.easy event handling
 3.small library easy
 4.manage ui using sheets
+
+
+Date : 16 june 2022
+    1.re-Usability in react
+        make a function which is repeating again and again and call in other not write all code again for same;
+
+    2.props component learn
+
+    3.render,counter
