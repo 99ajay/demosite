@@ -23,6 +23,7 @@ let obj = {
     name:"Aman",
     age:23,
     showDetails:function(){
+        console.log(this);
         console.log(this.name+" "+this.age);
     },
     showDetailsArrow:()=>{
