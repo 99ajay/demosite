@@ -1,67 +1,35 @@
- #include <bits/stdc++.h>
-
+#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
+int main()
+{
+  int n;
+  cin>>n;
+  vector<int>x;
+  vector<int>y;
+  for(int i=0;i<n;i++)
+  {
+    int l,m;
+    cin>>l>>m;
+    x.push_back(l);
+    y.push_back(m);
+  }
+  int j=n-1;
+  int perimeter=0;
+  int c=x[n-1];
+  int d=y[n-1];
+  for(int i=0;i<n;i++)
+  {
+      if(i==(n-1))
+     {
+         perimeter=perimeter+sqrt((pow(x[i],2)-pow(c,2))+(pow(y[i],2)-pow(d,2)));
+     }
+     else{
+             perimeter=perimeter+sqrt((pow(x[i],2)-pow(x[i+1],2))+(pow(y[i],2)-pow(y[i+1],2)));
 
-#define int long long
+     }
 
-#define endl "\n"
-
-vector<int> adj[10001];
-
-int32_t main(){
-
-int n; cin>>n;
-
-for(int i=0;i<n-1;i++){
-
-int x,y; cin>>x>>y;
-
-adj[x].push_back(y);
-
-adj[y].push_back(x);
-
-}
-
-int k; cin>>k;
-
-vector<int> p(k);
-
-int lvl[n+1]={0},visit[n+1]={0};;
-
-for(int i=0;i<k;i++) cin>>p[i],visit[p[i]]=1;
-
-queue<int> q;
-
-int ma=0;
-
-q.push(1);
-
-while(!q.empty()){
-
-int x=q.front();
-
-q.pop();
-
-visit[x]=1;
-
-for(auto i:adj[x]){
-
-if(visit[i]==0){
-
-q.push(i);
-
-lvl[i]+=lvl[x]+1;
-
-visit[i]=1;
-
-}
-
-}
-
-}
-
-for(int i=1;i<=n;i++) ma=max(ma,lvl[i]);
-
-cout<<ma<<endl;
-
+  }
+  cout<<perimeter<<endl;
+  return 0;
 }
