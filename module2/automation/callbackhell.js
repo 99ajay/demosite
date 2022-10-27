@@ -2,7 +2,7 @@ const fs = require("fs");
 
 console.log("Before ");
 
-fs.readFile("file.txt", function (error,data){
+fs.readFile("f1.txt", function (error,data){
     if(error){
         console.log(error);
     }else{
