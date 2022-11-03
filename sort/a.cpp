@@ -1,20 +1,30 @@
 #include<iostream>
 using namespace std;
-class cc
+int partition(int arr[],int n)
 {
-    public:
-    int add(int a,int b)
+    int i=0;
+    int j=0;
+    while(j<=n)
     {
-        return (a+b);
+       if(arr[j]%2==0)
+       {
+        swap(arr[j],arr[i]);
+        i++;
+        j++;
+       }
+       else{
+        j++;
+       }
     }
-    int add(int a,int b,int c)
-    {
-        return (a+b+c);
-    }
-};
+    return (i-1);
+}
 int main()
 {
-    cc obj;
-    int res=obj.add(2,3,'a');
-    cout<<res<<endl;
+  int arr[]={9,4,3,2,1,20,12,8};
+   cout<<partition(arr,7)<<endl;
+  for(int i=0;i<8;i++)
+  {
+    cout<<arr[i]<<" ";
+  }
+  return 0;
 }
