@@ -13,7 +13,7 @@ addnum(2);
 
 function addnum2(a,b)
 {
-    console.log("the sum is :",a+b);
+     return a+b;
 }
 
-addnum2(2,3);
+console.log(addnum2(2,3));

@@ -35,3 +35,8 @@ let obj = {
 obj.showDetails();
 obj.showDetailsArrow();
 
+const aaa=()=>'ajay';
+
+
+console.log(aaa());
+
