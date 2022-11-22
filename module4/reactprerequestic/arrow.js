@@ -13,11 +13,11 @@
 // add(1,2);
 
 
-// let arrowFunction = ()=>{
-//     console.log(this);
-// }
+let arrowFunction = ()=>{
+    console.log(this);
+}
 
-// arrowFunction();
+arrowFunction();
 
 let obj = {
     name:"Aman",

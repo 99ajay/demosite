@@ -7,7 +7,7 @@ request(link,cb);
 
      function cb(error, response, html) {
      if(error)
-     {0
+     {
          console.error('error:', error); // Print the error if one occurred
      }
      else

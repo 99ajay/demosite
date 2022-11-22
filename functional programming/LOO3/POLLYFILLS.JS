@@ -71,3 +71,8 @@ function iseven(x)
     }
 }
 console.log(mypollyfillfilter(farr,iseven));
+
+
+
+//Reduce.............hw
+

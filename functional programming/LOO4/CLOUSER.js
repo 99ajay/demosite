@@ -12,7 +12,7 @@
 
 function add()
 {
-    let a=4;
+    let a=4;//lexical scope
 
     function addchild()
     {
