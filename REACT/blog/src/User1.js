@@ -7,7 +7,7 @@ import React from 'react';
 //     )
 // }
 
-// without JSX
+// without JSX 
 function User1(){
     return React.createElement('h1',null,"hello user");
 }

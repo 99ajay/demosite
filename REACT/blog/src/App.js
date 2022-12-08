@@ -1,26 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
 import React,{Component} from 'react';
+import Student from './Student';
  
 
-class App extends Component{
-  constructor()
-  {
-    super();
-    this.state={data:1}
-  }
-  apple()
-  {
-    this.setState({data:this.state.data+1})
-  }
-  render(){
+ 
+   function App()
+   {
     return(
-    <div className="App">
-      <h1>{this.state.data}</h1>
-      <button onClick={()=>this.apple()}>Update data</button>
+    <div className="App"> 
+     <h1>props in react</h1>
+     <Student name={"ajay"} mail={"ajayverma@gmail.com"} address={{village :'mahangipur',post : "raisipur"}}/>
+     <Student name={"ajay"} mail={"ajayverma@gmail.com"} address={{village :'mahangipur',post : "raisipur"}}/>
+     <Student name={"ajay"} mail={"ajayverma@gmail.com"} address={{village :'mahangipur',post : "raisipur"}}/>
+     <Student name={"ajay"} mail={"ajayverma@gmail.com"} address={{village :'mahangipur',post : "raisipur"}}/>
+
+     <Student name={"ajay"} mail={"ajayverma@gmail.com"} address={{village :'mahangipur',post : "raisipur"}}/>
     </div>
     );
-  }
-}
+   }
+ 
 
 export default App;
