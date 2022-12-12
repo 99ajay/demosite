@@ -1,22 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
-import React,{Component, useState} from 'react';
+//import React,{Component, useState} from 'react';
 import Student from './Student';
+import React from "react";
  
 
- 
-   function App()
+ class App extends React.Component{
+   constructor(){
+      super();
+      this.state={name: "amit patel"};
+   }
+   render()
    {
-     const [data,setState]=useState("ajay verma");
-    return(
-    <div className="App"> 
-     <h1>props in react</h1>
-     <Student name={data} />
-     <button onClick={()=>{setState("Bholuu Patel")}}>update name</button>
-     
-    </div>
+     return(
+      <div className='App'>
+       <Student name={this.state.name} email="ajayverma041999@gmail.com"/>
+       <button onClick={()=>{this.setState({name:"ajay verma"})}}>Update name</button>
+      </div>
+   
     );
    }
+}
  
 
 export default App;

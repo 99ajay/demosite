@@ -1,14 +1,21 @@
-import { useState } from "react";
+import React from "react";
 
-function Student(props){
-  
+class Student extends React.Component{
+    constructor(){
+        super();
+      
+    }
+    
+    render(){
+        console.log(this.props);
+        
+        return(
+            <div style={{backgroundColor:"blue"}}>
+                <h1>My name is {this.props.name} </h1>
+                <h2>My email is: {this.props.email} </h2>
+            </div>
 
-    return(
-        <div style={{backgroundColor : "blue",margin : 10}}>
-            <h1>Hello {props.name}</h1>
-            
-        </div>
-    );
+        );
+    }
 }
-
 export default Student;
