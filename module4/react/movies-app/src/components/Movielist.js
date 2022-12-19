@@ -2,6 +2,12 @@ import { Component } from "react";
 import { movies } from "../movieData"
 
 class Movielist extends Component {
+    constructor() {
+        super();
+        this.state = {
+            hover: ""
+        };
+    }
     render() {
         let moviesarr = movies.results;
         return (
@@ -14,16 +20,28 @@ class Movielist extends Component {
                 </div>
                 <div className="movies-list">
                     {moviesarr.map((movieele) => (
-                        <div className="card movie-card">
-                            <img src="https://th.bing.com/th/id/OIP.bgZRya9d6c9saeEppWC1AQHaEK?pid=ImgDet&rs=1" style={{ height: '40vh', width: '20vw' }} className="card-img-top movie-img" alt="..." />
+                        <div className="card movie-card" onMouseEnter={() => this.setState({ hover: movieele.id })} onMouseLeave={() => this.setState({ hover: "" })} >                            <img src={`https://image.tmdb.org/t/p/original${movieele.backdrop_path}`} style={{ height: '40vh', width: '20vw' }} className="card-img-top movie-img" alt="..." />
                             <div>
                                 <h5 className="card-title">{movieele.original_title}</h5>
                             </div>
-                            <div>
-                               <button type="button" class="btn btn-primary">Add to favorites</button>
-                            </div>
+                            <div style={{ display: "flex", justifyContent: "center" }}>
+                                {this.state.hover == movieele.id && (
+                                    <a href="#" type="button" className="btn btn-primary movies-button">Add to Favourites</a>)}                            </div>
                         </div>
                     ))}
+
+
+                </div>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                    <nav aria-label="Page navigation example">
+                        <ul className="pagination">
+                            <li className="page-item"><a className="page-link" href="#">Previous</a></li>
+                            <li className="page-item"><a className="page-link" href="#">1</a></li>
+                            <li className="page-item"><a className="page-link" href="#">2</a></li>
+                            <li className="page-item"><a className="page-link" href="#">3</a></li>
+                            <li className="page-item"><a className="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </>
         )
