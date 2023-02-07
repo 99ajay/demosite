@@ -18,7 +18,7 @@ browserPromise.then(function(browser){
     let urlPromise=page.goto(" https://www.hackerrank.com/");
     return urlPromise;
 }).then(function(){
-    return waitAndClick(".menu-item-2887 a");
+    return waitAndClick(".menu-item-12851");
 }).then(function()
 {
     let waitPromise=page.waitForSelector("a .fl-button-text");

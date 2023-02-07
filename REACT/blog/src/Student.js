@@ -7,7 +7,7 @@ class Student extends React.Component{
     }
     
     render(){
-        console.log(this.props);
+       // console.log(this.props);
         
         return(
             <div style={{backgroundColor:"blue"}}>

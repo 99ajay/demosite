@@ -6,7 +6,7 @@ class Movielist extends Component {
         super();
         this.state = {
             hover: "",
-            pArr : [1]
+            pArr: [1]
         };
     }
     render() {
@@ -37,9 +37,9 @@ class Movielist extends Component {
                     <nav aria-label="Page navigation example">
                         <ul className="pagination">
                             <li className="page-item"><a className="page-link" href="#">Previous</a></li>
-                            {this.state.pArr.map(()=>  <li className="page-item"><a className="page-link" href="#">1</a></li>)}
-                          
-                             
+                            {this.state.pArr.map(() => <li className="page-item"><a className="page-link" href="#">1</a></li>)}
+
+
                             <li className="page-item"><a className="page-link" href="#">Next</a></li>
                         </ul>
                     </nav>
